@@ -14,66 +14,17 @@
     </div>
     <br>
     <div class="row galeria">
+        @foreach ($productos as $producto)
         <div class="producto">
             <div class="contenido">
                 <div class="imagen">
-                    <img src="images/p1.jpg" alt="">
-                    <span>20 s/.</span>
+                    <img src="/buscarimagen?imagen={{$producto->id}}.jpg" alt="">
+                    <span>{{$producto->precio}}</span>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.</p>
+                <p>{{$producto->descripcion}}</p>
             </div>
         </div>
-        <div class="producto">
-            <div class="contenido">
-                <div class="imagen">
-                    <img src="images/p2.jpg" alt="">
-                    <span>20 s/.</span>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.</p>
-            </div>
-        </div>
-        <div class="producto">
-            <div class="contenido">
-                <div class="imagen">
-                    <img src="images/p3.jpg" alt="">
-                    <span>20 s/.</span>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.</p>
-            </div>
-        </div>
-        <div class="producto">
-            <div class="contenido">
-                <div class="imagen">
-                    <img src="images/p1.jpg" alt="">
-                    <span>20 s/.</span>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.</p>
-            </div>
-        </div>
-        <div class="producto">
-            <div class="contenido">
-                <div class="imagen">
-                    <img src="images/p2.jpg" alt="">
-                    <span>20 s/.</span>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.</p>
-            </div>
-        </div>
-        <div class="producto">
-            <div class="contenido">
-                <div class="imagen">
-                    <img src="images/p3.jpg" alt="">
-                    <span>20 s/.</span>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.</p>
-            </div>
-        </div>
+        @endforeach
     </div>
 
     <br>

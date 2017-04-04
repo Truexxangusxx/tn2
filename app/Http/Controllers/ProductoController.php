@@ -61,5 +61,61 @@ class ProductoController extends Controller
     }
 
 
+    public function welcome(Request $request){
+
+        $productos=Producto::all();
+
+        return view('welcome')->with('productos',$productos);
+    }
+
+    public function obtenerproducto(Request $request){
+        $id=$request->input('id');
+        $producto=Producto::find($id);
+        $data=Atributo::where('producto_id',$producto->id)->get();
+        
+        return response()->json(['data'=> $data, 'producto' =>$producto]);
+    }
+
+
+    public function actualizar(Request $request){
+        $data=$request->input('data');
+        $todo=$request->all();
+        $producto=$request->input('producto');
+        $producto = json_decode($producto, true);
+
+        $nombre=$producto['nombre'];
+        $descripcion=$producto['descripcion'];
+        $precio=$producto['precio'];
+
+        $producto2 = Producto::find($producto['id']);
+        $producto2->nombre=$nombre;
+        $producto2->descripcion=$descripcion;
+        $producto2->precio=$precio;
+        $producto2->save();
+        
+
+        $datos = json_decode($data, true);
+        Atributo::where('producto_id',$producto2->id)->delete();
+        foreach($datos as $item){
+            $atributo = new Atributo;
+            $atributo->producto_id=$producto2->id;
+            $atributo->nombre=$item['nombre'];
+            $atributo->valor=$item['valor'];
+            $atributo->save();
+        }
+
+        return response()->json(['data'=> $datos, 'todo' =>$todo, 'producto' =>$producto2]);
+    }
+
+
+    public function eliminarproducto(Request $request){
+        $id=$request->input('id');
+        $producto=Producto::find($id);
+        $producto->delete();
+        Atributo::where('producto_id',$id)->delete();
+        
+        return response()->json(['producto' =>$producto]);
+    }
+
 
 }
