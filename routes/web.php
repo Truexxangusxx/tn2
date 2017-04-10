@@ -29,6 +29,8 @@ Route::POST('/eliminarproducto', 'ProductoController@eliminarproducto');
 Route::GET('/productoupdate/{id}', function ($id) {
     return view('productoupdate')->with('id',$id);
 });
+Route::POST('/productobuscar', 'ProductoController@productobuscar');
+Route::GET('/productobuscar', 'ProductoController@productobuscar');
 
 Route::POST('/productoupdate/{id}', function ($id) {
     $file = request()->file('imagen');
@@ -38,4 +40,13 @@ Route::POST('/productoupdate/{id}', function ($id) {
     return view('productoupdate')->with('id',$id);
 });
 
+Route::get('/contactanos', function () {
+    return view('contactanos');
+});
+
+Route::GET('/productobuscarcliente', 'ProductoController@productobuscarcliente');
+Route::POST('/productobuscarcliente', 'ProductoController@productobuscarcliente');
+
+
+Route::GET('/detalle/{id}', 'ProductoController@detalle');
 

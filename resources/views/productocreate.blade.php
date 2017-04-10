@@ -68,7 +68,10 @@
 
 </script>
 
-
+<div class="row">
+    <a href="/productonew"><h3>Nuevo</h3></a>
+    <a href="/productobuscar"><h3>buscar</h3></a>
+</div>
 <div class="row" ng-controller="mainCtrl">
     <div class="col-xs-12 col-md-6">
         <h1>Nuevo Producto</h1>

@@ -27,29 +27,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-6 col-sm-3 col-md-3">
-                    <h4>Tubo Norte</h4>
+                    <h4><a href="/">Tubo Norte</a></h4>
                 </div>
                 <div class="col-xs-6 menu hidden-xs col-sm-6">
-                    <a href="#"><i class="fa fa-home"></i> <span>Ubicanos</span> 
+                    <a href="/"><i class="fa fa-home"></i> <span>Inicio</span> 
                     </a>
-                    <a href="#"><i class="fa fa-shopping-cart"></i> <span>Catalogo</span> 
+                    <a href="/productobuscarcliente"><i class="fa fa-shopping-cart"></i> <span>Catalogo</span> 
                     </a>
-                    <a href="#"><i class="fa fa-rss"></i> <span>Noticias</span> 
+                    <a href="/contactanos"><i class="fa fa-map-marker"></i> <span>Ubicanos</span> 
                     </a>
                 </div>
                 <div class="col-xs-6 col-sm-3 col-md-3 menu">
-                    <a href="#"><i class="fa fa-phone-square"></i> 051-949210851</a>
+                    <a href="intent://send/+51949210851#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end"><i class="fa fa-whatsapp"></i> 051-949210851</a>
                 </div>
             </div>
         </div>
 
     </header>
     <menu class="visible-xs">
-        <a href="#"><i class="fa fa-home"></i> <span>Ubicanos</span> 
+        <a href="/"><i class="fa fa-home"></i> <span>Inicio</span> 
                     </a>
-                    <a href="#"><i class="fa fa-shopping-cart"></i> <span>Catalogo</span> 
+                    <a href="/productobuscarcliente"><i class="fa fa-shopping-cart"></i> <span>Catalogo</span> 
                     </a>
-                    <a href="#"><i class="fa fa-rss"></i> <span>Noticias</span> 
+                    <a href="/contactanos"><i class="fa fa-map-marker"></i> <span>Ubicanos</span> 
                     </a>
     </menu>
 
@@ -77,7 +77,7 @@
                     <p>Todo los derechos reservdaos, Tubo Norte del Peru SAC, 2016</p>
                 </div>
                 <div class="col-sm-6 col-md-4 redes derecha">
-                    <a href="#"><i class="fa fa-whatsapp"></i> Telefono: 051 949293945</a><br>
+                    <a href="intent://send/+51949210851#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end"><i class="fa fa-whatsapp"></i> Telefono: 051 949293945</a><br>
                     <a href="#"><i class="fa fa-envelope"></i> Correo: empresa@mail.com</a> <br>
                     <a href="#"><i class="fa fa-map-marker"></i> Direccion: Av. Javier Prado 2334, La Molina, Lima</a> <br>
                 </div>

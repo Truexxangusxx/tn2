@@ -1,4 +1,13 @@
 @extends('layouts.app') @section('content')
+
+
+<script>
+    function buscar() {
+        document.getElementById("myform").submit();
+    }
+
+</script>
+
 <br class="hidden-xs">
 <div class="productos">
     <div class="row">
@@ -8,8 +17,10 @@
             </a>
         </div>
         <div class="col-sm-7 col-sm-offset-1 col-md-5 col-md-offset-1 derecha buscador">
-            <input type="text" name="nombre" placeholder="busque en nuestro catalogo">
-            <i class="fa fa-search"></i>
+            <form id="myform" action="productobuscarcliente" method="POST">
+                <input type="text" name="nombre" placeholder="busque en nuestro catalogo">
+                <a href="#" id="buscar" onclick="buscar();"><i class="fa fa-search"></i></a>
+            </form>
         </div>
     </div>
     <br>

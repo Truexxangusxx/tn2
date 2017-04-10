@@ -117,5 +117,35 @@ class ProductoController extends Controller
         return response()->json(['producto' =>$producto]);
     }
 
+    public function productobuscar(Request $request){
+        $nombre=$request->input('nombre');
+            $productos=Producto::where('nombre','like','%'.$nombre.'%')->limit(100)->get();
+        if($nombre!=null){
+        }
+        else{
+        }
+        
+        return view('productobuscar')->with('productos',$productos);
+    }
+    
+    public function productobuscarcliente(Request $request){
+        $nombre=$request->input('nombre');
+        if($nombre!=null || $nombre!=''){
+            $productos=Producto::where('nombre','like','%'.$nombre.'%')->get();
+        }
+        else{
+            $productos=[];
+        }
+        
+        return view('catalogo')->with('productos',$productos);
+    }
+
+    public function detalle(Request $request, $id){
+        $producto=Producto::find($id);
+        $data=Atributo::where('producto_id',$producto->id)->get();
+        
+        return view('detalle')->with('producto',$producto)->with('data',$data);
+    }
+
 
 }
